@@ -40,6 +40,30 @@ public class LinkedList {
         temp.next = node;
     }
 
+    public void insertAtPosition(int data, int position) {
+        if(position == 0) {
+            insertAtBeginning(data);
+            return;
+        }
+        Node node = new Node(data);
+
+        Node temp = head;
+        for (int i = 0; i < position - 1; i++) {
+            temp = temp.next;
+        }
+        node.next = temp.next;
+        temp.next = node;
+    }
+
+    public void deleteAtBeginning() {
+        if(head == null) {
+            System.err.println("List is empty");
+            return;
+        }
+        head = head.next;
+    }
+
+
     public void traverse() {
         System.out.print("[");
 

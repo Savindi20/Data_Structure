@@ -9,11 +9,13 @@ public class Main {
         ll.insertAtBeginning(30);
 
         ll.insertAtEnding(40);
-        ll.insertAtEnding(50);
 
-        ll.insertAtBeginning(60);
-        ll.insertAtEnding(70);
+        ll.traverse();
 
+        ll.insertAtPosition(25, 2);
+        ll.traverse(); //
+
+        ll.deleteAtBeginning();
         ll.traverse();
     }
 }
