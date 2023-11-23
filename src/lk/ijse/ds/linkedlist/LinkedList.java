@@ -9,14 +9,6 @@ package lk.ijse.ds.linkedlist;
     }
 }*/
 public class LinkedList {
-    private static class Node {
-        private int data;
-        private Node next;
-        public Node(int data) {
-            this.data = data;
-        }
-
-    }
     private Node head;
 
     public void insertAtBeginning(int data) {
@@ -27,7 +19,7 @@ public class LinkedList {
     }
 
     public void insertAtEnding(int data) {
-        if(head == null){
+        if (head == null) {
             insertAtBeginning(data);
             return;
         }
@@ -41,7 +33,7 @@ public class LinkedList {
     }
 
     public void insertAtPosition(int data, int position) {
-        if(position == 0) {
+        if (position == 0) {
             insertAtBeginning(data);
             return;
         }
@@ -56,22 +48,40 @@ public class LinkedList {
     }
 
     public void deleteAtBeginning() {
-        if(head == null) {
+        if (head == null) {
             System.err.println("List is empty");
             return;
         }
         head = head.next;
     }
 
+    public void deleteAtEnding() {
+        Node temp = head;
+
+        while(temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
 
     public void traverse() {
         System.out.print("[");
 
         Node temp = head;
-        while(temp != null) {
+        while (temp != null) {
             System.out.print(temp.data + ", ");
             temp = temp.next;
         }
         System.out.println("\b\b]");
+    }
+
+    private static class Node {
+        private int data;
+        private Node next;
+
+        public Node(int data) {
+            this.data = data;
+        }
+
     }
 }
