@@ -25,5 +25,21 @@ public class Main {
 
         System.out.println("Peeked: " + stack.peek());
         System.out.println("size: " + stack.size()); //3
+
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.printStack();
+
+        stack.pop();
+
+        stack.push(100);
+        stack.push(200);
+
+        stack.printStack(); //[100, 200]
+
+        stack.clear();
+        stack.printStack(); //[Empty stack]
     }
 }
