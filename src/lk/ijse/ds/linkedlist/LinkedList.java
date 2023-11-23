@@ -1,10 +1,5 @@
 package lk.ijse.ds.linkedlist;
 
-/*
-    @author DanujaV
-    @created 11/23/23 - 12:41 PM
-*/
-
 /*class Node {
     private int data;
     private Node next;
@@ -112,6 +107,19 @@ public class LinkedList {
 
     public void clear() {
         head = null;
+    }
+
+    public int get(int position) {
+        if(head == null) {
+            System.err.println("List is empty");
+            return -1;
+        }
+
+        Node temp = head;
+        for (int i = 0; i < position; i++) {
+            temp = temp.next;
+        }
+        return temp.data;
     }
 
     public void traverse() {
